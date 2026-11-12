@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Adekola Adeyemi | Mechanical Engineer, CFD &amp; Engineering Software</title>
+<meta content="Mechanical engineer and PhD researcher. Open-source CFD tools, turbomachinery modeling, Python development, and industrial hydraulic systems." name="description"/>
+<meta content="Adekola Adeyemi | Engineering Portfolio" property="og:title"/>
+<meta content="Mechanical engineer and PhD researcher. Open-source CFD tools, turbomachinery modeling, Python development, and industrial hydraulic systems." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;circle cx='16' cy='16' r='14' fill='%2316213a'/&gt;&lt;path d='M16 2 A14 14 0 0 1 30 16 L23 16 A7 7 0 0 0 16 9 Z' fill='%2322a884'/&gt;&lt;circle cx='16' cy='16' r='6' fill='%23f4f6f8'/&gt;&lt;/svg&gt;" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Adekola, portfolio stylesheet (v2)
+   Warm light-grey canvas, white cards, near-black ink. Colour lives only in the
+   figures (viridis). One display face, tight; one body face. */
+
+:root {
+  --bg: #f2f2f0;
+  --card: #ffffff;
+  --ink: #111111;
+  --ink-2: #4a4a4a;
+  --muted: #7a7a78;
+  --rule: #e2e2de;
+  --rule-2: #d2d2cd;
+  --dark: #111214;
+  --on-dark: #f2f2f0;
+  --on-dark-muted: #9a9ea3;
+  --teal: #22a884;
+  --surface-2: #e9e9e5;
+  --btn-bg: #111111;
+  --btn-fg: #ffffff;
+  --header-bg: rgba(242,242,240,0.8);
+  --shadow: rgba(17,17,17,0.18);
+  color-scheme: light;
+  --display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap: 1180px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --r: 18px;
+  --r-sm: 12px;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+html[data-theme="dark"] {
+  --bg: #0f1012;
+  --card: #17181b;
+  --ink: #f2f2f0;
+  --ink-2: #c6c7c3;
+  --muted: #8e9095;
+  --rule: #25272b;
+  --rule-2: #34373c;
+  --dark: #17181b;
+  --on-dark: #f2f2f0;
+  --on-dark-muted: #9a9ea3;
+  --surface-2: #202226;
+  --btn-bg: #f2f2f0;
+  --btn-fg: #111111;
+  --header-bg: rgba(15,16,18,0.8);
+  --shadow: rgba(0,0,0,0.5);
+  color-scheme: dark;
+}
+html[data-theme="dark"] .panel, html[data-theme="dark"] .band, html[data-theme="dark"] .site-footer { border: 1px solid var(--rule); }
+html[data-theme="dark"] .site-footer { border-width: 1px 0 0; }
+html[data-theme="dark"] .work .cover, html[data-theme="dark"] .sweep-frame, html[data-theme="dark"] .article .hero-cover { border: 1px solid var(--rule); }
+html, body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, .display { font-family: var(--display); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 0.4em; }
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
+h3 { font-size: 1.25rem; letter-spacing: -0.02em; line-height: 1.25; }
+p { margin: 0 0 1em; max-width: 60ch; }
+ul, ol { padding-left: 1.2em; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--ink-2); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.88em; background: var(--surface-2); padding: 1px 6px; border-radius: 5px; }
+strong { font-weight: 600; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+img { max-width: 100%; display: block; }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--header-bg); backdrop-filter: blur(10px) saturate(1.2); transition: box-shadow 0.25s ease; }
+.site-header.scrolled { box-shadow: 0 1px 0 var(--rule); }
+.bar { display: flex; align-items: center; gap: 28px; height: 68px; }
+.brand { font-family: var(--display); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.03em; text-decoration: none; color: var(--ink); }
+.brand span { color: var(--teal); }
+.menu { display: flex; gap: 26px; margin-left: 20px; align-items: center; flex: 1; }
+.menu a { font-size: 0.92rem; color: var(--ink-2); text-decoration: none; position: relative; padding: 6px 0; }
+.menu a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform 0.25s var(--ease); }
+.menu a:not(.btn):hover::after, .menu a.active::after { transform: scaleX(1); }
+.menu a.active { color: var(--ink); }
+.menu a.btn { color: var(--btn-fg); }
+.theme-toggle { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--rule-2); background: transparent; color: var(--ink); cursor: pointer; display: grid; place-items: center; font: inherit; flex: none; transition: background-color 0.2s ease; }
+.theme-toggle:hover { background: var(--card); }
+.theme-toggle svg { width: 17px; height: 17px; }
+.theme-toggle .sun { display: none; }
+html[data-theme="dark"] .theme-toggle .sun { display: block; }
+html[data-theme="dark"] .theme-toggle .moon { display: none; }
+.menu .theme-toggle { margin-left: auto; }
+.menu .btn { margin-left: 0; }
+@media (max-width: 800px) { .menu .theme-toggle { display: none; } }
+.bar > .theme-toggle { display: none; }
+@media (max-width: 800px) { .bar > .theme-toggle { display: grid; margin-left: auto; } .menu-toggle { margin-left: 0; } }
+.menu-toggle { display: none; margin-left: auto; background: none; border: 1px solid var(--rule-2); border-radius: 999px; padding: 7px 14px; font: inherit; font-size: 0.9rem; color: var(--ink); cursor: pointer; }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--body); font-weight: 500; font-size: 0.92rem; background: var(--btn-bg); color: var(--btn-fg); text-decoration: none; padding: 11px 18px; border-radius: 999px; border: 1px solid var(--btn-bg); transition: transform 0.2s var(--ease), box-shadow 0.2s ease, background-color 0.2s ease; }
+.btn:hover { color: var(--btn-fg); transform: translateY(-1px); box-shadow: 0 8px 20px var(--shadow); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn.ghost:hover { background: var(--card); color: var(--ink); }
+.btn.light { background: #fff; color: var(--ink); border-color: #fff; }
+.btn.light:hover { color: var(--ink); }
+.btn.small { padding: 8px 14px; font-size: 0.86rem; }
+.btn .arrow { font-size: 0.95em; transition: transform 0.25s var(--ease); }
+.btn:hover .arrow { transform: translate(2px, -2px); }
+
+@media (max-width: 800px) {
+  .menu-toggle { display: inline-block; }
+  .menu { display: none; position: absolute; left: 0; right: 0; top: 68px; background: var(--bg); border-bottom: 1px solid var(--rule); flex-direction: column; align-items: stretch; gap: 0; padding: 8px var(--gutter) 18px; margin: 0; }
+  .menu.open { display: flex; }
+  .menu a { padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 1rem; }
+  .menu a:not(.btn)::after { display: none; }
+  .menu .btn { margin: 14px 0 0; justify-content: center; border-bottom: 1px solid var(--ink); }
+}
+
+section { padding: 72px 0; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 36px; }
+.section-head h2 { margin: 0; }
+.section-head p { margin: 0; color: var(--ink-2); max-width: 44ch; }
+.section-head .side { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.section-head .under { margin-top: 14px; max-width: none; }
+.section-head.top { align-items: flex-start; }
+.section-head.top > div { flex: 1; }
+.section-head.top .btn { flex: none; }
+.section-head.stacked { display: block; }
+.section-head.stacked h1 { margin-bottom: 14px; }
+.section-head.stacked p { max-width: none; font-size: 1.05rem; }
+.kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--ink-2); background: var(--card); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px 4px 8px; margin-bottom: 18px; }
+.kicker::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
+.center { text-align: center; }
+.center p, .center h2 { margin-left: auto; margin-right: auto; }
+@media (max-width: 800px) { .section-head { flex-direction: column; align-items: flex-start; gap: 16px; } .section-head .side { gap: 12px; } section { padding: 56px 0; } }
+
+/* Hero */
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr); gap: 40px; align-items: stretch; padding: 8px 0 40px; min-height: 72vh; }
+.hero .left { display: flex; flex-direction: column; justify-content: space-between; padding-left: 44px; }
+.hero .mid { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 32px 0; }
+.hero .stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 40px; }
+.hero .stat b { display: flex; align-items: flex-start; height: 1em; font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 3.2vw, 2.7rem); letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
+.hero .stat b sup { font-size: 0.5em; line-height: 1; margin-top: 0.05em; position: static; vertical-align: baseline; }
+.hero .stat b sup:first-child { margin-right: 0.05em; }
+.hero .stat b sup:not(:first-child) { margin: 0.05em 0.1em 0 0.12em; }
+.hero .stat span { display: block; color: var(--muted); font-size: 0.88rem; line-height: 1.35; margin-top: 10px; white-space: nowrap; }
+.hero .name { font-family: var(--display); font-weight: 400; font-size: clamp(4.2rem, 9vw, 8.6rem); letter-spacing: -0.06em; line-height: 0.9; margin: 0 0 22px -0.04em; }
+.hero .tag { font-size: 1.05rem; color: var(--ink-2); max-width: 44ch; }
+.hero .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+.hero .scroll { margin-top: 12px; font-size: 0.9rem; color: var(--ink-2); }
+.rail { position: absolute; left: 0; top: 8px; bottom: 40px; width: 20px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+.rail span { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 0.78rem; color: var(--muted); letter-spacing: 0.02em; }
+.rail::before { content: ""; position: absolute; top: 24%; bottom: 24%; left: 50%; width: 1px; background: var(--rule-2); }
+
+.panel { background: var(--dark); color: var(--on-dark); border-radius: var(--r); padding: 26px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; min-height: 460px; }
+.panel .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; font-size: 0.85rem; color: var(--on-dark-muted); }
+.panel .head b { color: var(--on-dark); font-weight: 500; display: block; }
+.figure-inflow { margin: 0; display: grid; place-items: center; flex: 1; padding: 12px 0; }
+.figure-inflow canvas { width: min(100%, 360px); height: auto; display: block; border-radius: 50%; cursor: crosshair; transition: transform 0.6s var(--ease); }
+.figure-inflow:hover canvas { transform: scale(1.02); }
+.panel .foot { display: flex; align-items: center; gap: 12px; font-size: 0.8rem; color: var(--on-dark-muted); }
+.colorbar { flex: 1; height: 8px; border-radius: 999px; background: linear-gradient(90deg, #440154, #414487, #2a788e, #22a884, #7ad151, #fde725); }
+
+@media (max-width: 1040px) { .hero { grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr); gap: 28px; } .hero .stats { gap: 18px; } .hero .stat b { font-size: 2rem; } }
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero .left { padding-left: 0; }
+  .rail { display: none; }
+  .hero .name { font-size: clamp(4rem, 19vw, 7rem); }
+  .hero .mid { padding: 36px 0 28px; }
+  .hero .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .hero .stat span { white-space: normal; }
+  .panel { min-height: 420px; }
+}
+
+/* About: heading left, prose right */
+.about { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 32px 64px; align-items: start; }
+.about h2 { max-width: 14ch; }
+.about .lead { font-size: 1.1rem; color: var(--ink-2); max-width: 58ch; }
+@media (max-width: 800px) { .about { grid-template-columns: 1fr; gap: 8px; } .about h2 { max-width: none; } }
+
+/* Highlights: two stat cards and a points card */
+.highlights { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 22px; align-items: stretch; }
+.card { background: var(--card); border-radius: var(--r); padding: 22px; border: 1px solid var(--rule); display: flex; flex-direction: column; }
+.card.stat .num { font-family: var(--display); font-weight: 400; font-size: 2.6rem; letter-spacing: -0.04em; line-height: 1; margin: 14px 0 8px; }
+.card.stat .num small { font-size: 0.5em; color: var(--muted); letter-spacing: -0.02em; margin: 0 6px; }
+.card.stat p { font-size: 0.9rem; color: var(--muted); margin: 0 0 18px; }
+.card.stat img { border-radius: var(--r-sm); object-fit: cover; width: 100%; flex: 1; min-height: 180px; }
+@media (max-width: 960px) { .card.stat img { flex: none; aspect-ratio: 4 / 3; } }
+.card .thumb { border-radius: var(--r-sm); aspect-ratio: 16 / 9; object-fit: cover; width: 100%; margin-bottom: 22px; }
+.icon-round { width: 36px; height: 36px; border-radius: 50%; background: var(--surface-2); display: grid; place-items: center; border: 1px solid var(--rule); }
+.points { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
+.points li { display: grid; grid-template-columns: 22px 1fr; gap: 14px; font-size: 0.93rem; color: var(--ink-2); }
+.points li::before { content: "+"; width: 22px; height: 22px; border-radius: 50%; background: var(--btn-bg); color: var(--btn-fg); font-size: 0.9rem; display: grid; place-items: center; line-height: 1; margin-top: 2px; }
+@media (max-width: 960px) { .highlights { grid-template-columns: 1fr 1fr; } .highlights > :last-child { grid-column: 1 / -1; } }
+@media (max-width: 600px) { .highlights { grid-template-columns: 1fr; } }
+
+/* Work strip and cards */
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.work { display: block; text-decoration: none; color: inherit; }
+.work:hover { color: inherit; }
+.work .cover { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 4 / 3; background: var(--dark); }
+.work .cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
+.work:hover .cover img { transform: scale(1.04); }
+.work .go { position: absolute; left: 50%; top: 50%; width: 52px; height: 52px; margin: -26px 0 0 -26px; border-radius: 50%; background: rgba(17,18,20,0.85); color: #fff; display: grid; place-items: center; font-size: 1.1rem; opacity: 0; transform: scale(0.8); transition: opacity 0.3s ease, transform 0.35s var(--ease); backdrop-filter: blur(4px); }
+.work:hover .go { opacity: 1; transform: scale(1); }
+.work .label { position: absolute; left: 14px; bottom: 12px; font-size: 0.75rem; color: rgba(242,242,240,0.85); background: rgba(17,18,20,0.55); padding: 3px 9px; border-radius: 999px; backdrop-filter: blur(4px); }
+.work .caption { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-top: 14px; }
+.work .caption h3 { margin: 0; font-size: 1.05rem; }
+.work .caption span { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+.work .caption span b { color: var(--ink); font-weight: 500; }
+.work-grid.two { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 800px) { .work-grid, .work-grid.two { grid-template-columns: 1fr; } .work .cover { aspect-ratio: 16 / 10; } }
+
+.pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.pill { font-size: 0.78rem; color: var(--ink-2); background: var(--card); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 10px; }
+.pill.dark { background: var(--btn-bg); color: var(--btn-fg); border-color: var(--btn-bg); }
+
+/* Journey ledger: who/when left, what plus tags right */
+.journey { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule-2); }
+.journey li { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr); gap: 12px 40px; padding: 26px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+.journey h3 { margin: 0 0 6px; font-size: 1.15rem; }
+.journey .when { font-size: 0.85rem; color: var(--muted); }
+.journey .right { display: flex; flex-direction: column; gap: 14px; }
+.journey .what { font-size: 0.95rem; color: var(--ink-2); margin: 0; max-width: 62ch; }
+@media (max-width: 720px) { .journey li { grid-template-columns: 1fr; gap: 12px; padding: 22px 0; } } .journey .pills { justify-content: flex-start; } }
+
+/* Publications */
+.pubs { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.pubs li { background: var(--card); border: 1px solid var(--rule); border-radius: var(--r-sm); padding: 20px 22px; display: grid; grid-template-columns: 64px 1fr auto; gap: 8px 22px; align-items: start; transition: transform 0.25s var(--ease), box-shadow 0.25s ease; }
+.pubs li:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -14px var(--shadow); }
+.pubs .year { font-family: var(--display); font-size: 1.05rem; letter-spacing: -0.02em; padding-top: 2px; }
+.pubs h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.pubs .meta { font-size: 0.88rem; color: var(--muted); margin: 0; }
+.pubs .links { display: flex; gap: 14px; font-size: 0.85rem; align-items: center; white-space: nowrap; }
+details.cite { grid-column: 2 / -1; font-size: 0.88rem; }
+details.cite summary { cursor: pointer; color: var(--ink-2); }
+details.cite pre { background: var(--surface-2); padding: 12px 14px; border-radius: 8px; overflow-x: auto; font-size: 0.78rem; line-height: 1.45; margin: 8px 0 0; }
+@media (max-width: 640px) { .pubs li { grid-template-columns: 1fr; } .pubs .links { white-space: normal; flex-wrap: wrap; } details.cite { grid-column: 1; } }
+
+/* Dark bands */
+.band { background: var(--dark); color: var(--on-dark); border-radius: var(--r); padding: clamp(36px, 6vw, 72px); position: relative; overflow: hidden; }
+.band h2 { color: #fff; }
+.band p { color: var(--on-dark-muted); }
+.band .bg { position: absolute; inset: 0; object-fit: cover; width: 100%; height: 100%; opacity: 0.22; mask-image: linear-gradient(90deg, transparent 20%, #000 100%); -webkit-mask-image: linear-gradient(90deg, transparent 20%, #000 100%); }
+.band > * { position: relative; }
+.band .kicker { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); color: var(--on-dark); }
+.band .kicker::before { background: var(--teal); }
+.band.center { display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+/* Writing cards */
+.posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.post { background: var(--card); border: 1px solid var(--rule); border-radius: var(--r); overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform 0.25s var(--ease), box-shadow 0.25s ease; }
+.post:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -16px var(--shadow); color: inherit; }
+.post img { aspect-ratio: 16 / 10; object-fit: cover; width: 100%; }
+.post .body { padding: 16px 18px 20px; }
+.post .row { display: flex; gap: 10px; align-items: center; font-size: 0.8rem; color: var(--muted); margin-bottom: 10px; }
+.post h3 { margin: 0; font-size: 1.05rem; }
+.post.soon { opacity: 0.7; }
+.post.soon .cover-soon { aspect-ratio: 16 / 10; background: var(--surface-2); display: grid; place-items: center; color: var(--muted); font-size: 0.85rem; }
+@media (max-width: 800px) { .posts { grid-template-columns: 1fr; } }
+
+/* Contact */
+.contact-hero { padding: 60px 0 20px; }
+.contact-hero .email { font-family: var(--display); font-weight: 400; font-size: clamp(1.8rem, 5vw, 4rem); letter-spacing: -0.04em; text-decoration: none; word-break: break-all; }
+.contact-list { list-style: none; padding: 0; margin: 28px 0 0; border-top: 1px solid var(--rule-2); max-width: 620px; }
+.contact-list li { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; }
+@media (max-width: 480px) { .contact-list li { grid-template-columns: 1fr; gap: 4px; } .meta-table { grid-template-columns: 1fr; gap: 2px 0; } .meta-table dd { margin-bottom: 10px; } }
+.contact-list .key { color: var(--muted); }
+
+/* Article / project pages */
+.back { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--ink-2); text-decoration: none; margin-bottom: 26px; padding: 7px 14px 7px 10px; border: 1px solid var(--rule-2); border-radius: 999px; background: transparent; transition: background-color 0.2s ease, color 0.2s ease; }
+.back:hover { background: var(--card); color: var(--ink); }
+.back .arrow { transition: transform 0.25s var(--ease); }
+.back:hover .arrow { transform: translateX(-3px); }
+.article { max-width: 760px; padding-top: 24px; }
+.article .hero-cover { border-radius: var(--r); overflow: hidden; aspect-ratio: 21 / 9; background: var(--dark); margin: 24px 0 36px; }
+.article .hero-cover img { width: 100%; height: 100%; object-fit: cover; }
+.article header h1 { font-size: clamp(2rem, 4vw, 3rem); }
+.article .lede { font-size: 1.15rem; color: var(--ink-2); max-width: 56ch; }
+.article h2 { font-size: 1.6rem; margin-top: 2.2em; }
+.article figure { margin: 28px 0; }
+.article figcaption { font-size: 0.86rem; color: var(--muted); margin-top: 10px; }
+.article figure img { border-radius: var(--r-sm); }
+.meta-table { display: grid; grid-template-columns: 110px 1fr; gap: 8px 20px; font-size: 0.9rem; margin: 22px 0 0; padding: 20px 0; border-top: 1px solid var(--rule-2); border-bottom: 1px solid var(--rule); }
+.meta-table dt { color: var(--muted); }
+.meta-table dd { margin: 0; }
+.placeholder { display: grid; place-items: center; background: var(--surface-2); color: var(--muted); border-radius: var(--r-sm); aspect-ratio: 16 / 9; font-size: 0.9rem; text-align: center; padding: 20px; }
+.related { background: var(--card); border: 1px solid var(--rule); border-radius: var(--r-sm); padding: 18px 20px; margin: 40px 0 0; max-width: 60ch; font-size: 0.95rem; }
+.article-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 0.92rem; }
+.article-nav a { text-decoration: none; padding: 9px 16px; border: 1px solid var(--rule-2); border-radius: 999px; color: var(--ink); transition: background-color 0.2s ease; }
+.article-nav a:hover { background: var(--card); }
+.article ul li { margin-bottom: 6px; }
+.article p, .article ul, .article .lede, .article .related { max-width: none; }
+
+/* Sweep viewer */
+.sweep { background: var(--card); border: 1px solid var(--rule); border-radius: var(--r); padding: 14px; margin: 28px 0; }
+.sweep-frame { position: relative; aspect-ratio: 16 / 9; background: var(--dark); border-radius: var(--r-sm); overflow: hidden; }
+.sweep-frame img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.25s ease; }
+.sweep-frame.swapping img { opacity: 0.4; }
+.sweep-frame .fallback { position: absolute; inset: 0; display: grid; place-items: center; color: var(--on-dark-muted); text-align: center; padding: 20px; font-size: 0.9rem; }
+.sweep-controls { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; margin-top: 12px; font-size: 0.9rem; padding: 0 6px; }
+.sweep input[type=range] { width: 100%; accent-color: var(--btn-bg); cursor: pointer; }
+.sweep output { font-variant-numeric: tabular-nums; min-width: 5ch; text-align: right; }
+
+/* Footer */
+.site-footer { background: var(--dark); color: var(--on-dark); margin-top: 40px; padding: 56px 0 40px; }
+.site-footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: end; }
+.site-footer .email { font-family: var(--display); font-weight: 400; font-size: clamp(1.6rem, 4vw, 3rem); letter-spacing: -0.04em; color: #fff; text-decoration: none; }
+.site-footer .email:hover { color: var(--teal); }
+.site-footer .kicker { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); color: var(--on-dark); }
+.site-footer .kicker::before { background: var(--teal); }
+.site-footer nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.site-footer nav a { font-size: 0.85rem; color: var(--on-dark-muted); text-decoration: none; padding: 7px 13px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.1); transition: background-color 0.2s ease, color 0.2s ease; }
+.site-footer nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.site-footer .fine { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: var(--on-dark-muted); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; margin-top: 10px; }
+.site-footer .fine a { color: var(--on-dark-muted); margin-right: 16px; }
+@media (max-width: 720px) { .site-footer .wrap { grid-template-columns: 1fr; align-items: start; } }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--btn-bg); color: var(--btn-fg); padding: 8px 12px; z-index: 20; }
+.skip:focus { left: 8px; }
+
+/* Motion: one hero entrance, one-time scroll reveals, tab crossfade */
+.hero .stats, .hero .name, .hero .tag, .hero .cta, .hero .scroll, .hero .panel { opacity: 0; transform: translateY(16px); animation: rise 0.8s var(--ease) forwards; }
+.hero .stats { animation-delay: 0.05s; }
+.hero .name { animation-delay: 0.15s; }
+.hero .tag { animation-delay: 0.28s; }
+.hero .cta { animation-delay: 0.38s; }
+.hero .scroll { animation-delay: 0.5s; }
+.hero .panel { animation-delay: 0.3s; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s var(--ease); transition-delay: var(--d, 0ms); }
+.reveal.in { opacity: 1; transform: none; }
+.page { animation: pagein 0.45s ease both; }
+.page[hidden] { display: none; }
+@keyframes pagein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+a[data-todo] { text-decoration-style: dotted; }
+@media (prefers-reduced-motion: reduce) {
+  .hero .stats, .hero .name, .hero .tag, .hero .cta, .hero .scroll, .hero .panel, .page { animation: none; opacity: 1; transform: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn, .work .cover img, .figure-inflow canvas, .pubs li, .post { transition: none; }
+}
+
+
+.private-cover{background:linear-gradient(135deg,#12232d,#153c44 68%,#224d49)!important;color:#f4f7f5;padding:25px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;}
+.private-icon{font-size:3rem;line-height:1;color:#70d6b9;}
+.private-text{font-family:var(--display);font-size:clamp(1.3rem,2.4vw,2.2rem);line-height:1.12;letter-spacing:-.03em;}
+.private-cover small{color:#b5d6cd;font-size:.82rem;}
+.technical-plate{background:#14272f;color:#f2f8f6;border-radius:var(--r);padding:18px 25px;margin:30px 0;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;}
+.technical-plate>span,.technical-plate>small{font-size:.75rem;letter-spacing:.055em;color:#a9c5c2;}
+.technical-plate-inner{display:grid;place-items:center;min-height:240px;}
+.outline-disc{width:190px;height:190px;border:2px solid #6ac5ae;border-radius:50%;display:grid;place-items:center;position:relative;box-shadow:0 0 0 13px rgba(92,190,161,.08);}
+.ring{height:85px;width:85px;border:2px solid #a1e6d1;border-radius:50%;}
+.micro-port{height:15px;width:15px;position:absolute;border:2px solid #8bd6c0;border-radius:50%;background:#14272f;}
+.p1{left:35px;top:28px}.p2{right:35px;top:28px}.p3{left:10px;top:86px}.p4{right:10px;top:86px}.p5{left:35px;bottom:28px}.p6{right:35px;bottom:28px}
+.article .hero-cover{background:#fafafa;aspect-ratio:16/9}.article .hero-cover img{object-fit:contain;background:#fff;padding:6px}
+.work .cover img{object-fit:cover;width:100%;height:100%}.card.stat .num{font-size:clamp(1.55rem,2.4vw,2.5rem)}
+.article figure img{width:100%;object-fit:contain;max-height:500px;background:#fff;border:1px solid var(--rule)}
+@media(max-width:480px){.hero .stat b{font-size:1.55rem}.hero .stats{gap:9px}.hero .stat span{font-size:.75rem}.article .meta-table{grid-template-columns:85px 1fr}.work-grid{grid-template-columns:1fr}}
+</style>
+<script>
+(function () {
+  var stored = null; try { stored = localStorage.getItem('theme'); } catch (e) {}
+  var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.setAttribute('data-theme', stored || (prefers ? 'dark' : 'light'));
+})();
+</script>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap bar">
+<a class="brand" href="#index.html">Adekola<span>.</span></a>
+<button aria-label="Toggle dark mode" class="theme-toggle" data-theme-toggle="" type="button"><svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg><svg class="sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+<button aria-controls="menu" aria-expanded="false" class="menu-toggle">Menu</button>
+<nav aria-label="Site" class="menu" id="menu"><a data-nav="index.html" href="#index.html">About</a><a data-nav="work.html" href="#work.html">Work</a><a data-nav="writing.html" href="#writing.html">Experience</a><a data-nav="contact.html" href="#contact.html">Contact</a><button aria-label="Toggle dark mode" class="theme-toggle" data-theme-toggle="" type="button"><svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg><svg class="sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button><a class="btn small" download="" href="assets/files/Adekola_Adeyemi_CV.pdf">Download CV</a></nav>
+</div></header>
+<main class="wrap" id="main">
+<section class="page" data-page="index.html" data-title="Adekola Adeyemi | Mechanical Engineer &amp; Computational Engineering Researcher" hidden="">
+<section class="hero"><div class="rail"><span>Mechanical engineer</span><span>2026</span></div>
+<div class="left"><div class="stats"><div class="stat"><b>3</b><span>Featured engineering projects</span></div><div class="stat"><b>2,000</b><span>CFD cases in design research</span></div><div class="stat"><b>2</b><span>Open-source research tools</span></div></div>
+<div class="mid"><div class="name">Adekola</div><p class="tag">Mechanical engineer and PhD researcher developing CFD tools, numerical models, and practical engineering solutions—from turbomachinery aerodynamics to subsea hydraulic equipment.</p><div class="cta"><a class="btn" href="#work.html">Explore projects <span class="arrow">↗</span></a><a class="btn ghost" href="#contact.html">Get in touch</a></div></div><div class="scroll">Research · Software · Mechanical design ↓</div></div>
+<div class="panel"><div class="head"><div><b>Inlet distortion</b>Illustrative fan-face total-pressure field</div><div style="text-align:right"><b>Interactive demonstration</b>Move cursor to shift the pattern</div></div><figure class="figure-inflow"><canvas aria-label="Illustrative, synthetic fan-face total pressure contour" height="320" id="inflow" width="320"></canvas></figure><div class="foot"><span>Low</span><div class="colorbar"></div><span>High</span></div></div></section>
+<section><div class="about"><div><span class="kicker">About</span><h2>Engineering tools, built for difficult problems.</h2></div><div><p class="lead">I am a mechanical engineering PhD candidate at the University of Windsor, specializing in computational fluid dynamics, turbomachinery aerodynamics, and scientific software development. My research investigates how non-axisymmetric blade rows can mitigate the effects of distorted inlet flow.</p><p class="lead">I develop geometry-processing workflows, extend OpenFOAM-based numerical models, conduct verification studies, and automate CFD analysis. Before my PhD, I worked in subsea engineering, preparing manufacturing drawings for hydraulic interfaces and performing factory acceptance testing.</p><p class="small muted">Based in Windsor, Ontario · PhD expected December 2026 · Interested in industry engineering and R&amp;D opportunities</p></div></div></section>
+<section><div class="highlights">
+<div class="card stat"><div aria-hidden="true" class="icon-round">{ }</div><div class="num">Python + CFD</div><p>Developed APT-Grid, an open-source structured mesh generator for periodic and aperiodic blade rows.</p><img alt="Structured grid surrounding adjacent aperiodic guide vanes, from APT-Grid manuscript" src="assets/img/apt_mesh.png"/></div>
+<div class="card stat"><div aria-hidden="true" class="icon-round">≈</div><div class="num">5M vs 60M</div><p>Body-force NAX model uses ~5 million cells; a mesh-independent blade-resolved full annulus was estimated to require ~60 million.</p><img alt="Predicted mass-flux distribution upstream and downstream of a non-axisymmetric guide vane" src="assets/img/bf_massflux.png"/></div>
+<div class="card"><span class="kicker">Engineering capabilities</span><ul class="points"><li>CFD solver development, numerical methods, and verification</li><li>Computational geometry and automated meshing</li><li>Python workflows, HPC simulation, and engineering analysis</li><li>Mechanical drawings, hydraulic interfaces, and hands-on FAT</li></ul></div></div></section>
+<section><div class="section-head"><div><span class="kicker">Portfolio</span><h2>Selected work</h2><p>Three projects illustrating software development, numerical modeling, and practical engineering.</p></div><a class="btn ghost small" href="#work.html">All projects ↗</a></div><div class="work-grid">
+<a class="work" href="#project-apt-grid.html"><div class="cover"><img alt="APT-Grid mesh of geometrically varying blade passages" loading="lazy" src="assets/img/apt_mesh.png"/></div><div class="work-meta"><span>Python · OpenFOAM</span><span>Research software</span></div><h3>APT-Grid</h3><p>Open-source structured meshing for periodic and aperiodic turbomachinery.</p></a>
+<a class="work" href="#project-body-force.html"><div class="cover"><img alt="CATANA transonic fan performance curves from body-force study" loading="lazy" src="assets/img/bf_speedline.png"/></div><div class="work-meta"><span>OpenFOAM · C++ · Python</span><span>CFD modeling</span></div><h3>Body-force modeling framework</h3><p>Efficient, geometry-driven models for fans, compressors, and non-axisymmetric blade rows.</p></a>
+<a class="work" href="#project-subsea.html"><div class="cover private-cover"><div class="private-icon">↗</div><div class="private-text">Subsea hydraulic<br/>interface engineering</div><small>Manufacturing · Mechanical design · FAT</small></div><div class="work-meta"><span>Mechanical design</span><span>Industry</span></div><h3>Subsea hydraulic systems</h3><p>Project-specific stab plate drawings, lifting hardware, and hands-on hydraulic testing.</p></a>
+</div></section>
+<section><div class="section-head top"><div><span class="kicker">Career</span><h2>Research and industry experience</h2><p class="under">A technical background spanning numerical engineering, open-source tooling, and real equipment.</p></div><a class="btn small" download="" href="assets/files/Adekola_Adeyemi_CV.pdf">Download CV ↓</a></div>
+<ul class="journey"><li><div><h3>University of Windsor</h3><div class="when">2021–present</div></div><div class="right"><p class="what">Doctoral researcher in turbomachinery and unsteady flows. OpenFOAM-based modeling, BLI, automated parametric studies, and engineering software.</p><div class="pills"><span class="pill dark">CFD</span><span class="pill">Python</span><span class="pill">HPC</span></div></div></li><li><div><h3>MSCM-PPNL Subsea Solutions</h3><div class="when">2019–2021</div></div><div class="right"><p class="what">Subsea engineer. Adapted hydraulic stab plate designs, produced manufacturing drawings, and conducted or supervised hydraulic FAT.</p><div class="pills"><span class="pill">Mechanical design</span><span class="pill">Hydraulics</span><span class="pill">FAT</span></div></div></li><li><div><h3>Shell Nigeria Exploration &amp; Production</h3><div class="when">2018</div></div><div class="right"><p class="what">Engineering internship encompassing metering-system analysis, produced-water data, and structural-analysis exposure.</p><div class="pills"><span class="pill">Engineering analysis</span><span class="pill">Industrial systems</span></div></div></li></ul></section>
+<section><div class="band"><span class="kicker">Collaboration</span><h2>Interested in simulation, engineering software, and mechanical R&amp;D.</h2><p>I welcome conversations about CFD, aerospace and energy applications, scientific computing, and hands-on engineering roles.</p><a class="btn light" href="#contact.html">Contact me ↗</a></div></section>
+</section>
+<section class="page" data-page="work.html" data-title="Work | Adekola Adeyemi" hidden=""><section><div class="section-head stacked"><span class="kicker">Portfolio</span><h1>Selected engineering projects</h1><p>My work spans computational geometry, physics-based simulation, scientific software, and mechanical hardware. Each project explains the problem, my contributions, methods, and evidence.</p></div><div class="work-grid">
+<a class="work" href="#project-apt-grid.html"><div class="cover"><img alt="Conformal structured mesh around aperiodic guide vanes" src="assets/img/apt_mesh.png"/></div><div class="work-meta"><span>Computational geometry</span><span>Open source</span></div><h3>APT-Grid</h3><p>Developed most of a Python mesh-generation framework supporting aperiodic turbomachinery.</p></a>
+<a class="work" href="#project-body-force.html"><div class="cover"><img alt="Body-force model flow angle perturbations for a non-axisymmetric guide vane" src="assets/img/bf_aperiodic.png"/></div><div class="work-meta"><span>Numerical modeling</span><span>Open source</span></div><h3>OpenFOAM body-force framework</h3><p>Extended established models to support non-axisymmetric blade rows and implemented 3D preprocessing.</p></a>
+<a class="work" href="#project-subsea.html"><div class="cover private-cover"><div class="private-icon">⌁</div><div class="private-text">Design to verification</div><small>Subsea hydraulic components</small></div><div class="work-meta"><span>Mechanical engineering</span><span>Industry</span></div><h3>Subsea hydraulic interfaces</h3><p>Engineering drawings for project-specific components, plus pressure testing and FAT supervision.</p></a></div></section>
+<section><div class="section-head stacked"><span class="kicker">Research publication</span><h2>OpenFOAM body-force modeling</h2><p>Research paper presented at ASME Turbo Expo 2026, Milan: <em>An OpenFOAM-Based Implementation of Modern Body Force Models for Fans and Compressors Including Support for Aperiodic Blade Rows</em> (GT2026-179240).</p><p><a href="https://github.com/TUFRG/OpenFOAM-bodyforce-aperiodic-GT2026-179240" rel="noopener" target="_blank">Project source code and sample cases ↗</a></p></div></section>
+<section><div class="band"><span class="kicker">In development</span><h2>Additional research and design studies</h2><p>My aperiodic stator optimization research and historical vehicle fabrication project will be added when the case studies and source materials are ready. No provisional outcomes are presented here.</p></div></section></section>
+<section class="page" data-page="writing.html" data-title="Experience | Adekola Adeyemi" hidden=""><section><div class="section-head stacked"><span class="kicker">Experience</span><h1>Research, software, and engineering practice</h1><p>My background connects analytical methods with the realities of computational workflows and manufactured systems.</p></div><div class="about"><div><h2>Technical focus</h2></div><div><p class="lead">Compressible CFD; turbomachinery; OpenFOAM solver development; numerical interpolation and computational geometry; automated simulation workflows on HPC systems; mechanical interface engineering and hydraulic testing.</p><p>I develop reusable tools and assess their predictions against higher-fidelity references, numerical convergence, and the physical behavior the models are intended to capture.</p></div></div></section>
+<section><div class="section-head stacked"><span class="kicker">Professional experience</span><h2>Across research and industry</h2></div><ul class="journey"><li><div><h3>PhD researcher</h3><div class="when">University of Windsor · 2021–present</div></div><div class="right"><p class="what">Turbomachinery, boundary-layer ingestion, body-force models, aperiodic blade rows, mesh generation, and automated design studies. Research presented at ASME Turbo Expo 2026.</p></div></li><li><div><h3>Subsea engineer</h3><div class="when">MSCM-PPNL · 2019–2021</div></div><div class="right"><p class="what">Mechanical manufacturing drawings for hydraulic stab plates and lifting hardware; hydraulic coupling testing and FAT supervision. Experience reviewing client technical requirements and interface documentation.</p></div></li><li><div><h3>Engineering intern</h3><div class="when">Shell Nigeria · 2018</div></div><div class="right"><p class="what">Engineering analysis supporting offshore systems, including metering redundancy studies, produced-water operational data, and structural analysis.</p></div></li></ul></section><section><div class="band"><span class="kicker">More detail</span><h2>See the engineering behind the claims.</h2><p>Browse the case studies for implementation details, verification, collaborative roles, and limitations.</p><a class="btn light" href="#work.html">View project pages ↗</a></div></section></section>
+<section class="page" data-page="contact.html" data-title="Contact | Adekola Adeyemi" hidden=""><section class="contact-hero"><span class="kicker">Contact</span><h1>Let's talk engineering.</h1><p class="lead">I am interested in engineering and R&amp;D opportunities involving CFD, aerodynamics, numerical simulation, scientific software, and mechanical systems.</p><a class="email" href="mailto:adeyemi5@uwindsor.ca">adeyemi5@uwindsor.ca</a><ul class="contact-list"><li><span class="key">Location</span><span>Windsor, Ontario, Canada</span></li><li><span class="key">GitHub</span><a href="https://github.com/TUFRG" rel="noopener" target="_blank">TUFRG research group repositories ↗</a></li><li><span class="key">CV</span><a download="" href="assets/files/Adekola_Adeyemi_CV.pdf">Download current engineering CV ↗</a></li><li><span class="key">Availability</span><span>PhD completion expected December 2026; contact me to discuss opportunities.</span></li></ul></section></section>
+<section class="page" data-page="project-apt-grid.html" data-title="APT-Grid | Adekola Adeyemi" hidden=""><article class="article"><a class="back" href="#work.html">← All projects</a><header><span class="kicker">Scientific software · Open source</span><h1>APT-Grid</h1><p class="lede">A Python-based structured mesh-generation framework developed to enable blade-resolved CFD of periodic and aperiodic turbomachinery configurations.</p><div class="meta-table"><dt>My role</dt><dd>Majority of Python development, geometry processing, implementation and CFD assessment</dd><dt>Technology</dt><dd>Python, NumPy, SciPy, OpenFOAM blockMesh, structured OH meshing</dd><dt>Repository</dt><dd><a href="https://github.com/TUFRG/APT-Grid" rel="noopener" target="_blank">TUFRG / APT-Grid ↗</a></dd><dt>Status</dt><dd>Open-source software; research manuscript in preparation</dd></div></header><div class="hero-cover"><img alt="Generated grid around aperiodic guide vanes" src="assets/img/apt_mesh.png"/></div>
+<h2>The problem I needed to solve</h2><p>My PhD research investigates whether aperiodic exit guide vanes can mitigate the aerodynamic degradation associated with boundary-layer-ingesting fans. These designs deliberately vary blade geometry around the annulus, but the commercial turbomachinery meshing tools available to the research did not support the required structured, conformal full-annulus grids. I therefore helped develop the missing capability rather than restrict the design study to periodic blades.</p>
+<h2>What I developed</h2><p>I wrote most of the Python code for geometry preprocessing, coordinate transformations, passage boundary construction, and surface generation. The passage-centred OH topology enables each blade passage to be constructed individually while adjacent passages share geometric boundaries.</p><p>My supervisor developed the OpenFOAM blockMesh dictionary and the grading-related portion of the Python code. We refined the geometric methods through technical discussions and iterative implementation.</p>
+<h2>Engineering design decisions</h2><p><strong>Curve robustness.</strong> My first cross-passage construction used an ellipse fitted to endpoints and slopes, plus an additional optimized point. The constrained formulation did not reliably yield a unique result. Following my supervisor’s suggestion, I implemented a quadratic Bézier construction that provides direct control of endpoints and tangent directions without that optimization step.</p><p><strong>Conformity by construction.</strong> Each passage is generated separately, but the topology defines shared geometric boundaries. Corresponding axial cell counts and grading parameters are averaged and applied across passages to obtain compatible node distributions rather than correcting interfaces afterward.</p><figure><img alt="Cross-passage geometric construction from APT-Grid working manuscript" src="assets/img/apt_geometry.png"/><figcaption>Passage-boundary construction in the working APT-Grid manuscript.</figcaption></figure>
+<h2>Verification and demonstrated capability</h2><p>APT-Grid was evaluated using periodic guide vane test cases, with grid-convergence studies and aerodynamic comparisons against Ansys TurboGrid. A full-annulus aperiodic inlet-guide-vane mesh was also generated and used in a blade-resolved CFD calculation.</p><p>The manuscript provides detailed convergence and spanwise comparisons. As the manuscript is still being revised, this page does not treat its preliminary numerical differences as final publication figures.</p><figure><img alt="Grid convergence comparison from the APT-Grid manuscript" src="assets/img/apt_convergence.png"/><figcaption>Example grid-convergence analysis; working manuscript figure, subject to final revisions.</figcaption></figure>
+<h2>Scope and limitations</h2><p>The current software assumes compatible meridional blade projections; geometric input requirements and automated curve-processing constraints remain. Its tested capabilities should not be interpreted as universal support for arbitrary blade-row geometries.</p><div class="related"><strong>Source code:</strong> <a href="https://github.com/TUFRG/APT-Grid/tree/main/Python" rel="noopener" target="_blank">Explore the Python implementation ↗</a></div><nav class="article-nav"><a href="#work.html">← Projects</a><a href="#project-body-force.html">Body-force framework →</a></nav></article></section>
+<section class="page" data-page="project-body-force.html" data-title="OpenFOAM Body-Force Framework | Adekola Adeyemi" hidden=""><article class="article"><a class="back" href="#work.html">← All projects</a><header><span class="kicker">CFD modeling · Open source</span><h1>OpenFOAM body-force modeling framework</h1><p class="lede">Extending physics-based fan and compressor models to handle spatially varying blade rows while avoiding the cost of fully resolving each blade.</p><div class="meta-table"><dt>My role</dt><dd>Solver refinement and debugging; 3D preprocessing framework; Fourier interpolation; mesh templates; all CFD assessments</dd><dt>Technology</dt><dd>OpenFOAM, C++, Python, least-squares Fourier methods, CFD verification</dd><dt>Paper</dt><dd>ASME Turbo Expo 2026 · GT2026-179240</dd><dt>Repository</dt><dd><a href="https://github.com/TUFRG/OpenFOAM-bodyforce-aperiodic-GT2026-179240" rel="noopener" target="_blank">Open-source solver and sample cases ↗</a></dd></div></header><div class="hero-cover"><img alt="Stage efficiency and pressure-ratio trends for CATANA fan" src="assets/img/bf_speedline.png"/></div>
+<h2>Why build a lower-cost model?</h2><p>Full-annulus blade-resolved turbomachinery simulations are expensive, especially when the inflow and blades vary circumferentially. Body-force models replace explicit blade geometry with volumetric source terms representing flow turning, blockage, profile losses, and shock losses. The aim is to retain the aerodynamic trends needed for design exploration at lower computational cost.</p>
+<h2>My engineering contributions</h2><p>My supervisor developed the first version of the OpenFOAM solver; I subsequently cleaned up the implementation and corrected errors. I developed the Python geometry-preprocessing framework, building on an earlier 2D implementation by Amelia George and extending it to 3D. I also developed the Fourier-based interpolation framework, the parametric blockMesh templates, and performed the numerical assessments.</p><h2>Turning discrete blade geometry into CFD inputs</h2><p>The preprocessing system extracts blade camber normals, meridional arclength, tangential thickness, and local angular pitch. For aperiodic blade rows, circumferential variations are represented by truncated Fourier series with coefficients estimated by least squares, accommodating irregular circumferential sampling. Coefficients are interpolated across the meridional plane using Delaunay triangulation and barycentric interpolation before reconstruction at CFD cell centres.</p>
+<h2>Physics and verification</h2><p>The framework combines established turning-force, compressibility, blockage, profile-loss, and shock-loss formulations. The equations include a spatially varying local angular pitch, supporting geometric variations beyond traditional uniformly pitched blade rows. Assessments cover an idealized zero-thickness guide vane, the ECL5/CATANA transonic fan, and a periodic/aperiodic NAX guide vane.</p><p>The ECL5/CATANA assessment captures broad efficiency trends near the design condition but has documented pressure-ratio discrepancies at off-design operating points; the paper examines stator loss modeling as one contributing mechanism. The NAX guide-vane example demonstrates circumferential flow-turning trends and three-dimensional redistribution of mass flow.</p>
+<figure><img alt="Circumferential flow-angle predictions at multiple span locations" src="assets/img/bf_aperiodic.png"/><figcaption>NAX guide-vane flow angle variations from the 2026 manuscript.</figcaption></figure>
+<h2>Design-study advantage</h2><p>For the aperiodic NAX IGV, the paper reports a body-force full-annulus grid of approximately <strong>5 million cells</strong> versus an estimated <strong>60 million cells</strong> for a mesh-independent blade-resolved case. This is a cell-count comparison—not a measured speed-up in runtime.</p>
+<figure><img alt="Mass flux redistribution in non-axisymmetric guide vane" src="assets/img/bf_massflux.png"/><figcaption>Mass-flux non-uniformity upstream and downstream of the NAX blade row.</figcaption></figure>
+<h2>Limits and next steps</h2><p>Body-force models deliberately omit blade-scale flow structures. Their accuracy depends on the validity of the underlying formulations, operating regime, and loss models; they complement rather than replace blade-resolved CFD in a verification strategy.</p><div class="related"><strong>Research resources:</strong> <a href="https://github.com/TUFRG/OpenFOAM-bodyforce-aperiodic-GT2026-179240" rel="noopener" target="_blank">View source code and benchmark cases ↗</a></div><nav class="article-nav"><a href="#project-apt-grid.html">← APT-Grid</a><a href="#project-subsea.html">Subsea engineering →</a></nav></article></section>
+<section class="page" data-page="project-subsea.html" data-title="Subsea Hydraulic Engineering | Adekola Adeyemi" hidden=""><article class="article"><a class="back" href="#work.html">← All projects</a><header><span class="kicker">Industrial experience · Mechanical engineering</span><h1>Subsea hydraulic interface engineering</h1><p class="lede">Project-specific manufacturing drawings and hands-on factory acceptance testing for hydraulic hardware used in subsea equipment.</p><div class="meta-table"><dt>Organization</dt><dd>MSCM-PPNL Subsea Solutions Nigeria Ltd.</dd><dt>Period</dt><dd>2019–2021</dd><dt>My role</dt><dd>Drawing modifications and manufacturing documentation; hydraulic FAT execution and supervision</dd><dt>Equipment</dt><dd>Hydraulic stab plates, lifting brackets, hydraulic couplings</dd></div></header>
+<div class="technical-plate"><span>MECHANICAL ENGINEERING / INDUSTRY</span><div class="technical-plate-inner"><div class="outline-disc"><div class="ring"></div><div class="micro-port p1"></div><div class="micro-port p2"></div><div class="micro-port p3"></div><div class="micro-port p4"></div><div class="micro-port p5"></div><div class="micro-port p6"></div></div></div><small>Illustrative concept only — not an original client drawing or specification</small></div>
+<h2>Project context</h2><p>Hydraulic stab plates house the couplings used to connect flying leads to subsea trees. They require a precise mechanical arrangement for the relevant couplings and mating hardware. Lifting brackets are used to lift and support stab plate assemblies during factory acceptance testing.</p>
+<h2>My design work</h2><p>Using established company stab plate templates, I modified designs for individual projects and prepared drawings for manufacture. I also created manufacturing drawings for lifting brackets, documenting geometry, machining features, and assembly requirements. My role involved adapting existing designs to project-specific requirements rather than developing the original stab plate concept.</p>
+<h2>Testing and equipment verification</h2><p>I personally performed factory acceptance testing of hydraulic equipment, including operating pressure-testing equipment, pressurizing couplings, monitoring pressure, checking for leakage, and recording results under established company procedures. On other occasions, I supervised the testing activities.</p><p>The company's hydraulic coupling FAT procedures cover documentation verification, low-pressure tests, proof-pressure tests, and mated coupling tests, with records of acceptance and test instrumentation. The procedure establishes the testing context; individual acceptance results are not published here.</p>
+<h2>What this work demonstrates</h2><ul><li>Understanding of mechanical and hydraulic interface hardware.</li><li>Project-specific engineering drawing modification and manufacturing documentation.</li><li>Connection between hardware design, fabrication requirements, and equipment verification.</li><li>Hands-on hydraulic pressure testing and supervision in an industrial environment.</li></ul><div class="related"><strong>Confidentiality note:</strong> Original employer drawings, manufacturing dimensions, and FAT records are intentionally not reproduced on this public portfolio page. The graphic above is illustrative, not a reproduction of the tested equipment.</div><nav class="article-nav"><a href="#project-body-force.html">← Body-force framework</a><a href="#work.html">All projects →</a></nav></article></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div><span class="kicker" style="margin-bottom:14px">Say hello</span><br/><a class="email" href="mailto:adeyemi5@uwindsor.ca">adeyemi5@uwindsor.ca</a></div>
+<nav aria-label="Footer"><a href="#index.html">About</a><a href="#work.html">Work</a><a href="#writing.html">Experience</a><a href="#contact.html">Contact</a></nav>
+<div class="fine"><span>Adekola Adeyemi · Mechanical engineering portfolio</span><span><a href="https://github.com/TUFRG">GitHub</a></span></div>
+</div></footer>
+<script>
+// Menu toggle
+document.querySelectorAll('.menu-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const menu = document.getElementById('menu');
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+
+// Parameter sweep viewer. Markup:
+// <div class="sweep" data-pattern="assets/img/nozzle/case-{i}.png" data-min="1" data-max="12" data-label="Area ratio" data-values="1.2,1.3,...">
+// Images are swapped as the slider moves. If an image is missing, a labelled box shows instead.
+document.querySelectorAll('.sweep').forEach(el => {
+  const img = el.querySelector('img');
+  const fallback = el.querySelector('.fallback');
+  const range = el.querySelector('input[type=range]');
+  const out = el.querySelector('output');
+  const pattern = el.dataset.pattern;
+  const values = (el.dataset.values || '').split(',').map(s => s.trim()).filter(Boolean);
+  function update() {
+    const i = Number(range.value);
+    const label = values[i - Number(range.min)] || i;
+    out.textContent = label;
+    img.src = pattern.replace('{i}', String(i).padStart(2, '0'));
+    img.alt = (el.dataset.label || 'Case') + ' ' + label;
+  }
+  img.addEventListener('error', () => { fallback.hidden = false; img.style.visibility = 'hidden'; });
+  img.addEventListener('load', () => { fallback.hidden = true; img.style.visibility = 'visible'; });
+  range.addEventListener('input', () => { el.querySelector('.sweep-frame').classList.add('swapping'); update(); });
+  img.addEventListener('load', () => el.querySelector('.sweep-frame').classList.remove('swapping'));
+  update();
+});
+
+// Header shadow after scroll
+const header = document.querySelector('.site-header');
+const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+// Scroll reveal for section heads, ledger rows, and the facts strip. One pass, no replay.
+window.setupReveal = function (scope) {
+  const root = scope || document;
+  const items = root.querySelectorAll('.section-head, .about > *, .work, .journey > li, .pubs > li, .post, .band, .card');
+  items.forEach((el, i) => { if (!el.classList.contains('reveal')) { el.classList.add('reveal'); el.style.setProperty('--d', ((i % 6) * 60) + 'ms'); } });
+  if (!('IntersectionObserver' in window)) { items.forEach(el => el.classList.add('in')); return; }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  items.forEach(el => io.observe(el));
+};
+window.setupReveal();
+
+// Dark mode toggle. Preference is stored; falls back to the system setting.
+document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+});
+
+</script>
+<script>
+(function () {
+  // STANDALONE = true keeps navigation inside the page (no hash, no external links),
+  // so the preview works inside sandboxed viewers. The deployed site uses hash routes.
+  const STANDALONE = false;
+  let current = 'index.html';
+  const pages = document.querySelectorAll('.page');
+  const navs = document.querySelectorAll('[data-nav]');
+  const owner = {'project-apt-grid.html': 'work.html', 'project-body-force.html': 'work.html', 'project-subsea.html': 'work.html'};
+  function show(route) {
+    let h = route !== undefined ? route : (location.hash.replace(/^#/, '') || 'index.html');
+    let [page, anchor] = h.split('/');
+    let found = false;
+    pages.forEach(p => { if (p.dataset.page === page) { found = true; document.title = p.dataset.title; } });
+    if (!found) page = 'index.html';
+    pages.forEach(p => {
+      const on = p.dataset.page === page;
+      if (on && p.hidden) { p.hidden = false; p.style.animation = 'none'; void p.offsetWidth; p.style.animation = ''; }
+      else if (!on) p.hidden = true;
+    });
+    const active = owner[page] || page;
+    navs.forEach(a => a.classList.toggle('active', a.dataset.nav === active));
+    document.getElementById('menu').classList.remove('open');
+    if (window.setupReveal) window.setupReveal(document.querySelector('.page[data-page="' + page + '"]'));
+    if (STANDALONE && route !== undefined && page !== current) { try { history.pushState({ route: h }, '', location.href); } catch (e) {} }
+    current = page;
+    if (anchor) { const el = document.getElementById(anchor); if (el) el.scrollIntoView(); } else window.scrollTo(0, 0);
+  }
+  if (STANDALONE) {
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a'); if (!a) return;
+      const href = a.getAttribute('href') || '';
+      e.preventDefault();
+      if (href.startsWith('#') && href.length > 1 && href !== '#main') show(href.slice(1));
+    });
+    window.addEventListener('popstate', e => { const r = (e.state && e.state.route) || 'index.html'; const [pg] = r.split('/'); current = pg; show(r); });
+    try { history.replaceState({ route: 'index.html' }, '', location.href); } catch (e) {}
+    show('index.html');
+  } else {
+    window.addEventListener('hashchange', () => show());
+    document.addEventListener('click', e => { const a = e.target.closest('a[data-todo]'); if (a) e.preventDefault(); });
+    show();
+  }
+})();
+</script>
+<script>
+// Annular inflow contour. Draws a synthetic fan-face total-pressure field with a
+// low-momentum region (the ingested boundary layer) whose position follows the
+// cursor. Twelve banded levels so it reads like a real contour plot.
+// Replace the field function with real data later if you want: it only needs
+// f(r, theta) in [0, 1].
+(function () {
+  const canvas = document.getElementById('inflow');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const N = 320;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = N * dpr; canvas.height = N * dpr;
+  ctx.scale(dpr, dpr);
+
+  const stops = ['#440154', '#414487', '#2a788e', '#22a884', '#7ad151', '#fde725']
+    .map(h => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)]);
+  const levels = 12;
+  const lut = [];
+  for (let i = 0; i < levels; i++) {
+    const t = i / (levels - 1) * (stops.length - 1);
+    const a = stops[Math.floor(t)], b = stops[Math.min(Math.ceil(t), stops.length - 1)], u = t - Math.floor(t);
+    lut.push([a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u]);
+  }
+
+  const hub = 0.34, tip = 0.98, half = N / 2;
+  const img = ctx.createImageData(N, N);
+  const px = img.data;
+
+  function field(r, th, th0) {
+    // Deficit: a cosine bump in theta centered on th0, strongest near the casing.
+    let d = th - th0; d = Math.atan2(Math.sin(d), Math.cos(d));
+    const s = (r - hub) / (tip - hub);
+    // Clean baseline: full core, thin hub and casing boundary layers.
+    const base = 0.58 + 0.22 * Math.min(1, s / 0.12, (1 - s) / 0.08);
+    const ang = Math.exp(-(d * d) / (2 * 0.9 * 0.9));
+    const deficit = 0.68 * ang * Math.pow(s, 1.2);
+    // Mild ripple so the bands are not perfectly analytic.
+    const ripple = 0.03 * Math.sin(5 * th + 9 * s);
+    return Math.min(1, Math.max(0, base - deficit + ripple));
+  }
+
+  let shown = levels; // bands revealed so far (load animation)
+  function draw(th0) {
+    for (let y = 0; y < N; y++) {
+      for (let x = 0; x < N; x++) {
+        const dx = (x - half) / half, dy = (y - half) / half;
+        const r = Math.sqrt(dx * dx + dy * dy);
+        const i = (y * N + x) * 4;
+        if (r < hub || r > tip) { px[i + 3] = 0; continue; }
+        const th = Math.atan2(dy, dx);
+        const v = field(r, th, th0);
+        let k = Math.min(levels - 1, Math.floor(v * levels));
+        if (k >= shown) { px[i] = 26; px[i + 1] = 28; px[i + 2] = 31; px[i + 3] = 255; continue; }
+        const c = lut[k];
+        px[i] = c[0]; px[i + 1] = c[1]; px[i + 2] = c[2]; px[i + 3] = 255;
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+    // Hub and casing rings
+    ctx.strokeStyle = 'rgba(242,242,240,0.35)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.arc(half, half, hub * half, 0, Math.PI * 2); ctx.stroke();
+    ctx.beginPath(); ctx.arc(half, half, tip * half, 0, Math.PI * 2); ctx.stroke();
+  }
+
+  let theta = Math.PI / 2, target = Math.PI / 2, raf = null, active = false;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function tick() {
+    let d = target - theta; d = Math.atan2(Math.sin(d), Math.cos(d));
+    const step = reduce ? d : d * 0.15;
+    theta += step;
+    if (Math.abs(step) > 0.002) draw(theta);
+    if (Math.abs(d) > 0.005) raf = requestAnimationFrame(tick); else raf = null;
+  }
+  function request() { if (!raf) raf = requestAnimationFrame(tick); }
+
+  function point(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width * 2 - 1;
+    const y = (e.clientY - rect.top) / rect.height * 2 - 1;
+    target = Math.atan2(y, x);
+    request();
+  }
+  canvas.addEventListener('pointermove', point);
+  canvas.addEventListener('pointerleave', () => { target = Math.PI / 2; request(); });
+  canvas.addEventListener('pointerdown', point);
+
+  // Load: bands fill in from the low-pressure side up, then a slow idle sway.
+  let idle = true, t0 = null;
+  canvas.addEventListener('pointerenter', () => { idle = false; });
+  canvas.addEventListener('pointerleave', () => { idle = true; });
+  function intro(ts) {
+    if (t0 === null) t0 = ts;
+    const p = Math.min(1, (ts - t0) / 1100);
+    shown = Math.max(1, Math.round(p * levels));
+    draw(theta);
+    if (p < 1) requestAnimationFrame(intro); else { shown = levels; requestAnimationFrame(sway); }
+  }
+  function sway(ts) {
+    if (idle) { target = Math.PI / 2 + 0.22 * Math.sin(ts / 2600); request(); }
+    requestAnimationFrame(sway);
+  }
+  if (reduce) { shown = levels; draw(theta); }
+  else requestAnimationFrame(intro);
+})();
+
+</script>
+</body></html>
